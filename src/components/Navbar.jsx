@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const NAV_ITEMS = [
   { to: "Home", label: "home.jsx" },
@@ -76,7 +77,7 @@ function Navbar() {
             aria-expanded={menu}
             aria-label="Toggle navigation menu"
           >
-            <span className="font-mono text-xs">{menu ? "esc" : "menu"}</span>
+            {menu ? <HiX size={18} /> : <HiMenu size={18} />}
           </button>
         </div>
 
