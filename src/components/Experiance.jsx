@@ -1,72 +1,54 @@
 import React from "react";
+import { SectionEyebrow, WindowDots } from "./ui/Chrome";
 
-import html from "../assets/html.png";
-import css from "../assets/css.jpg";
-import javascript from "../assets/javascript.png";
-import react from "../assets/reactjs.png";
-import node from "../assets/node.png";
-import express from "../assets/express.png";
-import mongodb from "../assets/mongodb.jpg";
+const SKILLS = [
+  { category: "languages", items: ["JavaScript (ES6+)", "TypeScript"] },
+  { category: "frontend", items: ["React.js", "Angular", "HTML5", "CSS3"] },
+  {
+    category: "ui_libraries",
+    items: ["Tailwind CSS", "Material-UI", "PrimeNG", "Bootstrap"],
+  },
+  { category: "state_management", items: ["Redux", "NgRx"] },
+  { category: "apis", items: ["RESTful integration", "Real-time data handling"] },
+  {
+    category: "devops_tools",
+    items: ["Git", "GitHub", "GitLab", "Azure DevOps", "CI/CD pipelines", "IIS config"],
+  },
+];
 
 function Experiance() {
-  const cardItem = [
-    {
-      id: 1,
-      logo: html,
-      name: "Html5",
-    },
-    {
-      id: 2,
-      logo: css,
-      name: "CSS3",
-    },
-    {
-      id: 3,
-      logo: javascript,
-      name: "JavaScript",
-    },
-    {
-      id: 4,
-      logo: react,
-      name: "React",
-    },
-    {
-      id: 5,
-      logo: node,
-      name: "Node",
-    },
-    {
-      id: 6,
-      logo: express,
-      name: "Express",
-    },
-    {
-      id: 7,
-      logo: mongodb,
-      name: "Mongo DB",
-    },
-  ];
-
   return (
     <div
       name="Experiance"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-16"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 md:py-24"
     >
-      <div>
-        <h1 className="text-3xl font-bold mb-5">Experiance</h1>
-        <p className="  ">
-          I've more than 3 years of experiance in below technologies.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-7 my-3">
-          {cardItem.map(({ id, logo, name }) => (
-            <div
-              className=" flex flex-col items-center justify-center border-[2px] rounded-full md:w-[200px] md:h-[200px] shadow-md p-1 cursor-pointer hover:scale-110 duration-300"
-              key={id}
-            >
-              <img src={logo} className="w-[150px] rounded-full" alt="" />
-              <div>
-                <div className="">{name}</div>
-              </div>
+      <SectionEyebrow file="skills.json">stack</SectionEyebrow>
+      <h1 className="mb-8 font-display text-2xl font-semibold text-ivory md:text-3xl">
+        Skills
+      </h1>
+      <p className="mb-6 font-mono text-xs text-muted">
+        4+ years of experience across the technologies below.
+      </p>
+
+      <div className="overflow-hidden rounded-lg border border-line bg-surface shadow-xl shadow-black/30">
+        <div className="flex items-center gap-3 border-b border-line bg-surface2 px-4 py-2.5">
+          <WindowDots />
+          <span className="font-mono text-xs text-muted">skills.json</span>
+        </div>
+        <div className="grid gap-x-8 gap-y-6 p-6 font-mono text-sm md:grid-cols-2 md:p-8">
+          {SKILLS.map((group) => (
+            <div key={group.category}>
+              <p className="mb-2 text-muted">
+                <span className="text-amber">"{group.category}"</span>: [
+              </p>
+              <ul className="ml-4 space-y-1">
+                {group.items.map((item) => (
+                  <li key={item} className="text-ivory">
+                    <span className="text-mint">+</span> "{item}",
+                  </li>
+                ))}
+              </ul>
+              <p className="text-muted">]</p>
             </div>
           ))}
         </div>

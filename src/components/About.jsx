@@ -1,91 +1,88 @@
 import React from "react";
+import { SectionEyebrow } from "./ui/Chrome";
+
+const FACTS = [
+  { k: "experience", v: "4+ years" },
+  { k: "based_in", v: "Delhi, India" },
+  { k: "role", v: "Frontend Developer" },
+  { k: "stack", v: "React.js · Angular" },
+];
 
 function About() {
   return (
     <div
       name="About"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-20"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 md:py-24"
     >
-      <div>
-        <h1 className="text-3xl font-bold mb-5">About</h1>
-        <p>
-          Hello, I'm Raju Ranjan, a passionate [Frontend Developer || React
-          Developer] with a keen eye for crafting engaging and user-friendly web
-          applications. With a background in IT, I strive to create impactful
-          and visually stunning software solutions that leave a lasting
-          impression.
-        </p>
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">Certifications</h1>
-        <span>
-          HTML5 & CSS3, Issuing organization: Pirple.com (Sep 2021) [Credential
-          URL:&nbsp;
+      <SectionEyebrow file="about.md">README</SectionEyebrow>
+
+      <div className="grid gap-8 md:grid-cols-[1fr_320px]">
+        <div className="rounded-lg border border-line bg-surface p-6 md:p-8">
+          <h1 className="font-display text-2xl font-semibold text-ivory md:text-3xl">
+            About
+          </h1>
+          <div className="mt-4 space-y-4 leading-relaxed text-muted">
+            <p>
+              I'm a frontend developer who builds interfaces that hold up
+              under real usage — enterprise dashboards, real-time systems,
+              and multi-role workflow platforms where the data changes
+              constantly and the UI can't fall behind.
+            </p>
+            <p>
+              Over 4+ years at <span className="text-ivory">CodeAegis</span>,
+              I've shipped production apps in both{" "}
+              <span className="text-ivory">React.js</span> and{" "}
+              <span className="text-ivory">Angular</span> — from a
+              ride-booking platform to a legal CRM to a crowd-shipping app —
+              usually owning the frontend end-to-end: architecture, state
+              management, API integration, and the CI/CD pipeline that ships
+              it.
+            </p>
+            <p>
+              I care about clean component architecture, reusable design
+              systems, and code that the next developer can actually read.
+              Off the clock, I'm usually exploring what's new in the React
+              and Angular ecosystems.
+            </p>
+          </div>
+
+          <div className="mt-6 border-t border-line pt-6">
+            <h2 className="font-mono text-xs uppercase tracking-wide text-mint">
+              Certifications
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              HTML5 &amp; CSS3 — Pirple.com (Sep 2021) ·{" "}
+              <a
+                href="https://www.pirple.com/certificates/ya0kattgyc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber hover:text-mint"
+              >
+                View certificate ↗
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          {FACTS.map((f) => (
+            <div
+              key={f.k}
+              className="flex items-center justify-between rounded-md border border-line bg-surface px-4 py-3 font-mono text-xs"
+            >
+              <span className="text-muted">{f.k}:</span>
+              <span className="text-ivory">{f.v}</span>
+            </div>
+          ))}
           <a
-            style={{ color: "blue" }}
-            href="https://www.pirple.com/certificates/ya0kattgyc"
+            href="https://github.com/Raju-Ranjan-Kumar"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
+            className="block rounded-md border border-line bg-surface px-4 py-3 text-center font-mono text-xs text-mint transition-colors hover:border-mint"
           >
-            Certificate Link
+            github.com/Raju-Ranjan-Kumar ↗
           </a>
-          ]
-        </span>
-
-        <br />
-        <br />
-
-        <h1 className="text-green-600 font-semibold text-xl">
-          Education & Training
-        </h1>
-        <span>
-          [Degree/Certification], [Institution], [Year] [Degree/Certification],
-          [Institution], [Year] [Relevant Course], [Platform/Institution],
-          [Year]
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Skills & Expertise
-        </h1>
-        <span>
-          Proficient in [Programming Languages] Experienced with [Software
-          Tools/Technologies] Strong grasp of [Design Principles/Concepts]
-          Excellent problem-solving skills Effective communicator and
-          collaborator
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Professional Experience
-        </h1>
-        <span>
-          [Job Title], [Company/Organization], [Dates] [Brief description of
-          responsibilities and achievements] [Job Title],
-          [Company/Organization], [Dates] [Brief description of responsibilities
-          and achievements] [Freelance/Contract Work], [Client/Organization],
-          [Dates] [Brief description of projects and contributions]
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Achievements & Awards
-        </h1>
-        <span>
-          [Award/Recognition], [Organization/Institution], [Year] [Achievement],
-          [Organization/Platform], [Year]
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Mission Statement
-        </h1>
-        <p>
-          My mission is to leverage my skills and creativity to deliver
-          innovative [Your Field] solutions that exceed client expectations and
-          contribute positively to the digital landscape. I am committed to
-          continuous learning and growth, always seeking new challenges and
-          opportunities to expand my horizons.
-        </p>
+        </div>
       </div>
     </div>
   );

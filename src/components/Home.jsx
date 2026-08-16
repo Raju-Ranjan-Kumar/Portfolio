@@ -1,96 +1,128 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 import pic from "../assets/myimg.jfif";
 
-import { FaNodeJs } from "react-icons/fa6";
-import { SiMongodb , SiExpress } from "react-icons/si";
-import { IoLogoCss3, IoLogoYoutube } from "react-icons/io";
+import { IoLogoYoutube } from "react-icons/io";
 import { FaReact, FaGithub, FaLinkedin, FaHtml5 } from "react-icons/fa";
+import { SiTypescript, SiAngular, SiTailwindcss } from "react-icons/si";
 
-import { ReactTyped } from "react-typed";
+import { WindowDots } from "./ui/Chrome";
 
 function Home() {
   return (
-    <>
-      <div
-        name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
-      >
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">
-            <span className="text-xl">Welcome In My Feed</span>
-            <div className="flex space-x-1 text-2xl md:text-4xl">
-              <h1>Hello, I'm a</h1>
-              {/* <span >Developer</span> */}
-              <ReactTyped
-                className="text-red-700 font-bold"
-                strings={["Developer", "Programmer", "Coder"]}
-                typeSpeed={40}
-                backSpeed={50}
-                loop={true}
-              />
+    <div
+      name="Home"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 pb-16 pt-14 md:pb-24 md:pt-20"
+    >
+      <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+        <div>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 font-mono text-xs text-mint">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint" />
+            open to new opportunities
+          </div>
+
+          <div className="overflow-hidden rounded-lg border border-line bg-surface shadow-2xl shadow-black/40">
+            <div className="flex items-center gap-3 border-b border-line bg-surface2 px-4 py-2.5">
+              <WindowDots />
+              <span className="font-mono text-xs text-muted">bash — zsh</span>
             </div>
-            <br />
-
-            <p className="text-sm md:text-md text-justify">
-              I am a passionate Frontend Developer with 3 years of experience
-              specializing in building dynamic, user-friendly, and
-              high-performance web applications using React.js. My expertise
-              lies in creating responsive designs, optimizing web performance,
-              and delivering seamless user experiences. I have a proven track
-              record of developing scalable and maintainable codebases while
-              collaborating closely with cross-functional teams, including
-              designers, backend developers, and project managers.
-            </p>
-            <br />
-
-            {/* social media icons */}
-            <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
-              <div className="  space-y-2">
-                <h1 className="font-bold text-center ">Available on</h1>
-                <ul className="flex space-x-5">
-                  <li>
-                    <a href="https://www.linkedin.com/in/raju-ranjan-kumar-9bb282207/" target="_blank">
-                      <FaLinkedin className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Raju-Ranjan-Kumar" target="_blank">
-                      <FaGithub className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/@rajuranjankumar1869" target="_blank">
-                      <IoLogoYoutube className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className=" space-y-2">
-                <h1 className="font-bold text-center">Currently working on</h1>
-                <div className="flex space-x-5">
-                  <FaHtml5 className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <IoLogoCss3 className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <FaNodeJs className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <FaReact className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  {/* <SiMongodb className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <SiExpress className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" /> */}
-                </div>
-              </div>
+            <div className="space-y-2 px-5 py-6 font-mono text-sm md:text-base">
+              <p className="text-muted">
+                <span className="text-mint">raju@dev</span>
+                <span className="text-line">:</span>
+                <span className="text-amber">~</span>
+                <span className="text-line">$</span> whoami
+              </p>
+              <p className="text-2xl font-display font-semibold text-ivory md:text-4xl">
+                Raju Ranjan Kumar
+                <span className="cursor-blink text-amber">_</span>
+              </p>
+              <p className="animate-fade-up text-base text-muted md:text-lg">
+                Frontend Developer — React.js &amp; Angular
+              </p>
+              <p
+                className="animate-fade-up pt-2 leading-relaxed text-muted"
+                style={{ animationDelay: "120ms" }}
+              >
+                4+ years building scalable, high-performance web apps —
+                enterprise dashboards, real-time systems, and role-based
+                workflows. Currently shipping frontend at{" "}
+                <span className="text-ivory">CodeAegis</span>.
+              </p>
             </div>
           </div>
-          <div className="md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1">
-            <img
-              src={pic}
-              className="rounded-full md:w-[450px] md:h-[450px]"
-              alt="Profile"
-            />
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Link
+              to="Portfolio"
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="cursor-pointer rounded-md bg-amber px-5 py-2.5 font-mono text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+            >
+              View projects →
+            </Link>
+            <a
+              href="/resume.pdf"
+              download="Raju_Ranjan_Kumar_Resume.pdf"
+              className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ivory transition-colors hover:border-mint hover:text-mint"
+            >
+              ↓ Download résumé
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-2">
+              <h2 className="font-mono text-xs text-muted">available_on:</h2>
+              <ul className="flex gap-4">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/raju-ranjan-kumar-9bb282207/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin className="text-2xl text-muted hover:text-mint cursor-pointer" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Raju-Ranjan-Kumar" target="_blank" rel="noreferrer">
+                    <FaGithub className="text-2xl text-muted hover:text-mint cursor-pointer" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@rajuranjankumar1869"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <IoLogoYoutube className="text-2xl text-muted hover:text-mint cursor-pointer" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h2 className="font-mono text-xs text-muted">currently_working_on:</h2>
+              <div className="flex gap-4">
+                <FaHtml5 className="text-2xl text-muted hover:scale-110 hover:text-ivory duration-200 cursor-pointer" />
+                <FaReact className="text-2xl text-muted hover:scale-110 hover:text-ivory duration-200 cursor-pointer" />
+                <SiAngular className="text-2xl text-muted hover:scale-110 hover:text-ivory duration-200 cursor-pointer" />
+                <SiTypescript className="text-2xl text-muted hover:scale-110 hover:text-ivory duration-200 cursor-pointer" />
+                <SiTailwindcss className="text-2xl text-muted hover:scale-110 hover:text-ivory duration-200 cursor-pointer" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <hr />
-    </>
+        <div className="hidden md:block">
+          <img
+            src={pic}
+            alt="Raju Ranjan Kumar"
+            className="mx-auto h-64 w-64 rounded-full border border-line object-cover shadow-2xl shadow-black/50 ring-1 ring-amber/20"
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 

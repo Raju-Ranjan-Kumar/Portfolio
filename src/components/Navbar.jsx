@@ -1,99 +1,109 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import pic from "../assets/myimg.jfif";
-import { AiOutlineMenu } from "react-icons/ai";
-import { IoCloseSharp } from "react-icons/io5";
+
+const NAV_ITEMS = [
+  { to: "Home", label: "home.jsx" },
+  { to: "About", label: "about.md" },
+  { to: "Experiance", label: "skills.json" },
+  { to: "Portfolio", label: "projects.js" },
+  { to: "Resume", label: "resume.pdf" },
+  { to: "Contact", label: "contact.js" },
+];
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-  const navItems = [
-    {
-      id: 1,
-      text: "Home",
-    },
-    {
-      id: 2,
-      text: "About",
-    },
-    {
-      id: 3,
-      text: "Portfolio",
-    },
-    {
-      id: 4,
-      text: "Experiance",
-    },
-    {
-      id: 5,
-      text: "Contact",
-    },
-  ];
+  const [active, setActive] = useState("Home");
+
+  useEffect(() => {
+    const sections = NAV_ITEMS.map((n) => document.querySelector(`[name="${n.to}"]`)).filter(
+      Boolean
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.getAttribute("name"));
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-white">
-        <div className="flex justify-between items-center h-16">
-          <div className=" flex space-x-2">
-            <img src={pic} className="h-12 w-12 rounded-full" alt="" />
+    <header className="sticky top-0 z-50 border-b border-line bg-ink/90 backdrop-blur">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
+        <div className="flex items-center justify-between h-16">
+          <Link
+            to="Home"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="flex items-center gap-2 font-mono text-sm text-ivory cursor-pointer"
+          >
+            <span className="text-mint">~/</span>
+            <span className="font-semibold">raju.dev</span>
+          </Link>
 
-            <h1 className="font-semibold text-xl cursor-pointer">
-              Ra<span className="text-green-500 text-2xl">j</span>u Ran
-              <span className="text-green-500 text-2xl">j</span>an
-              <p className="text-sm">Frontend Developer</p>
-            </h1>
-          </div>
+          <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onSetActive={() => setActive(item.to)}
+                className={`group flex cursor-pointer items-center gap-2 rounded-t-md border-b-2 px-3 py-2 font-mono text-xs transition-colors ${
+                  active === item.to
+                    ? "border-amber text-ivory"
+                    : "border-transparent text-muted hover:text-ivory"
+                }`}
+              >
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${
+                    active === item.to ? "bg-amber" : "bg-line group-hover:bg-muted"
+                  }`}
+                />
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-          {/* desktop navbar */}
-          <div>
-            <ul className="hidden md:flex space-x-8">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 cursor-pointer"
-                  key={id}
-                >
-                  <Link
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div onClick={() => setMenu(!menu)} className="md:hidden">
-              {menu ? <IoCloseSharp size={24} /> : <AiOutlineMenu size={24} />}
-            </div>
-          </div>
+          <button
+            className="rounded-md border border-line p-2 text-ivory md:hidden"
+            onClick={() => setMenu((v) => !v)}
+            aria-expanded={menu}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="font-mono text-xs">{menu ? "esc" : "menu"}</span>
+          </button>
         </div>
-        
-        {/* mobile navbar */}
+
         {menu && (
-          <div className="bg-white">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
-                  key={id}
+          <nav className="border-t border-line py-3 md:hidden" aria-label="Primary mobile">
+            <div className="flex flex-col gap-1">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={() => setMenu(false)}
+                  className={`flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-left font-mono text-xs ${
+                    active === item.to ? "bg-surface text-amber" : "text-muted"
+                  }`}
                 >
-                  <Link
-                    onClick={() => setMenu(!menu)}
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
+                  <span className="h-1.5 w-1.5 rounded-full bg-current" />
+                  {item.label}
+                </Link>
               ))}
-            </ul>
-          </div>
+            </div>
+          </nav>
         )}
       </div>
-    </>
+    </header>
   );
 }
 
