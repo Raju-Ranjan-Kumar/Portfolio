@@ -64,7 +64,7 @@ function Home() {
               View projects →
             </Link>
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               download="Raju_Ranjan_Kumar_Resume.pdf"
               className="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-ivory transition-colors hover:border-mint hover:text-mint"
             >

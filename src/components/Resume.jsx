@@ -25,14 +25,14 @@ function Resume() {
           </p>
           <div className="flex flex-col gap-3">
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               download="Raju_Ranjan_Kumar_Resume.pdf"
               className="rounded-md bg-amber px-4 py-2.5 text-center font-mono text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
             >
               ↓ Download
             </a>
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               target="_blank"
               rel="noreferrer"
               className="rounded-md border border-line px-4 py-2.5 text-center font-mono text-sm text-ivory transition-colors hover:border-mint hover:text-mint"
@@ -47,10 +47,19 @@ function Resume() {
             <WindowDots />
             <span className="font-mono text-xs text-muted">preview — resume.pdf</span>
           </div>
-          <iframe title="Résumé preview" src="/resume.pdf" className="h-[520px] w-full bg-ink" />
+          <iframe
+            title="Résumé preview"
+            src={`${process.env.PUBLIC_URL}/resume.pdf`}
+            className="h-[520px] w-full bg-ink"
+          />
           <p className="border-t border-line px-4 py-2 text-center font-mono text-[11px] text-muted">
             Preview not loading?{" "}
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="text-amber hover:text-mint">
+            <a
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-amber hover:text-mint"
+            >
               Open resume.pdf directly ↗
             </a>
           </p>
