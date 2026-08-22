@@ -42,6 +42,7 @@ function Navbar() {
             offset={-70}
             className="flex items-center gap-2 font-mono text-sm text-ivory cursor-pointer"
           >
+            <img src={`${process.env.PUBLIC_URL}/logo-mark.svg`} alt="Raju Ranjan Kumar logo" className="h-6 w-6 rounded-md" />
             <span className="text-mint">~/</span>
             <span className="font-semibold">raju.dev</span>
           </Link>

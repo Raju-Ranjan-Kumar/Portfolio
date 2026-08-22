@@ -82,6 +82,14 @@ function About() {
           >
             github.com/Raju-Ranjan-Kumar ↗
           </a>
+          <a
+            href="https://raju-techdev.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="block rounded-md border border-line bg-surface px-4 py-3 text-center font-mono text-xs text-mint transition-colors hover:border-mint"
+          >
+            TechDev — tutorials & resources ↗
+          </a>
         </div>
       </div>
     </div>

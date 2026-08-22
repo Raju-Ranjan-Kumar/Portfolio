@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -24,6 +24,15 @@ function Footer() {
             className="hover:text-mint"
           >
             <FaGithub size={20} />
+          </a>
+          <a
+            href="https://raju-techdev.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-mint"
+            title="TechDev — my tutorials & resources site"
+          >
+            <FaGlobe size={20} />
           </a>
         </div>
 

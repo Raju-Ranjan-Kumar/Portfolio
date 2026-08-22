@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import pic from "../assets/myimg.jfif";
 
 import { IoLogoYoutube } from "react-icons/io";
-import { FaReact, FaGithub, FaLinkedin, FaHtml5 } from "react-icons/fa";
+import { FaReact, FaGithub, FaLinkedin, FaHtml5, FaGlobe } from "react-icons/fa";
 import { SiTypescript, SiAngular, SiTailwindcss } from "react-icons/si";
 
 import { WindowDots } from "./ui/Chrome";
@@ -97,6 +97,16 @@ function Home() {
                     rel="noreferrer"
                   >
                     <IoLogoYoutube className="text-2xl text-muted hover:text-mint cursor-pointer" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://raju-techdev.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    title="TechDev — my tutorials & resources site"
+                  >
+                    <FaGlobe className="text-2xl text-muted hover:text-mint cursor-pointer" />
                   </a>
                 </li>
               </ul>
