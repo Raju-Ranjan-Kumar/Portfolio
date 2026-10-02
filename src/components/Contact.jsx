@@ -25,7 +25,7 @@ function Contact() {
   return (
     <div
       name="Contact"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 md:py-24"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-10 md:py-16"
     >
       <SectionEyebrow file="contact.js">let's talk</SectionEyebrow>
 

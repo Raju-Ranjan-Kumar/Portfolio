@@ -12,7 +12,7 @@ function About() {
   return (
     <div
       name="About"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 md:py-24"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 pt-10 md:pt-14"
     >
       <SectionEyebrow file="about.md">README</SectionEyebrow>
 

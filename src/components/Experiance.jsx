@@ -20,7 +20,7 @@ function Experiance() {
   return (
     <div
       name="Experiance"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 py-16 md:py-24"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 pt-10 md:pt-14"
     >
       <SectionEyebrow file="skills.json">stack</SectionEyebrow>
       <h1 className="mb-8 font-display text-2xl font-semibold text-ivory md:text-3xl">

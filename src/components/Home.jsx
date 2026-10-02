@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-import pic from "../assets/myimg.jfif";
+import pic from "../assets/raju.jpg";
 
 import { IoLogoYoutube } from "react-icons/io";
 import { FaReact, FaGithub, FaLinkedin, FaHtml5, FaGlobe } from "react-icons/fa";
@@ -13,9 +13,9 @@ function Home() {
   return (
     <div
       name="Home"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 pb-16 pt-14 md:pb-24 md:pt-20"
+      className="max-w-screen-2xl container mx-auto px-4 md:px-20 pt-10 md:pt-14"
     >
-      <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 font-mono text-xs text-mint">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint" />
@@ -124,12 +124,18 @@ function Home() {
           </div>
         </div>
 
-        <div className="hidden md:block">
-          <img
-            src={pic}
-            alt="Raju Ranjan Kumar"
-            className="mx-auto h-64 w-64 rounded-full border border-line object-cover shadow-2xl shadow-black/50 ring-1 ring-amber/20"
-          />
+        <div className="flex flex-col overflow-hidden rounded-lg border border-line bg-surface shadow-2xl shadow-black/40 md:h-[calc(100vh-180px)] md:max-h-[720px]">
+          <div className="flex items-center gap-3 border-b border-line bg-surface2 px-4 py-2.5">
+            <WindowDots />
+            <span className="font-mono text-xs text-muted">profile.jpg</span>
+          </div>
+          <div className="aspect-[3/4] flex-1 overflow-hidden md:aspect-auto">
+            <img
+              src={pic}
+              alt="Raju Ranjan Kumar"
+              className="h-full w-full object-cover object-bottom"
+            />
+          </div>
         </div>
       </div>
     </div>
